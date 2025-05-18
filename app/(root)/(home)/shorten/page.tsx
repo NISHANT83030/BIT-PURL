@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import { nanoid } from "nanoid";
 import { Button } from "@/components/ui/button";
 import { Copy } from "lucide-react";
+
 const ShortenPage = () => {
   const [input, setInput] = useState("");
   const [shortUrl, setShortUrl] = useState("");
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState(false);
+
   const handleGenerate = async () => {
     const urlRegex = /^(http|https):\/\/(\w+(:{0,1}\w*)?@)?([\w.-]+)(:[0-9]+)?(\/.*)?$/;
     if (!input.trim() || !urlRegex.test(input)) {
@@ -15,27 +17,30 @@ const ShortenPage = () => {
       setTimeout(() => setError(false), 1200);
       return;
     }
-    const urlString=nanoid(10);
-    const  myHeaders = new Headers();
-myHeaders.append("Content-Type", "text/plain");
-     
-const raw = JSON.stringify({
-  url: input,
-  shorturl: urlString
-});
+    const urlString = nanoid(10);
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "text/plain");
 
-const requestOptions:any = {
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
+    const raw = JSON.stringify({
+      url: input,
+      shorturl: urlString,
+    });
 
-fetch("/api/shorten", requestOptions)
-  .then(response => response.json())
-  .then(result =>console.log(result))
-  .catch(error => console.log('error', error));
-    setShortUrl(`${process.env.NEXT_PUBLIC_HOST}/${urlString}`);
+    const requestOptions: RequestInit = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    try {
+      const response = await fetch("/api/shorten", requestOptions);
+      await response.json();
+      setShortUrl(`${process.env.NEXT_PUBLIC_HOST}/${urlString}`);
+    } catch (error) {
+      // Optionally handle error
+      console.log("error", error);
+    }
     setInput("");
     setCopied(false);
   };

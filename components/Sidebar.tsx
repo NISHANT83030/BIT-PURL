@@ -1,5 +1,5 @@
 "use client"
-import React, { use } from 'react'
+import React from 'react'
 import  { sideBarItems } from '@/constants'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils';

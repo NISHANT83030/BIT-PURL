@@ -1,5 +1,6 @@
 import dbConnect from '@/lib/db';
 import Url from '@/lib/url';
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import React from 'react';
 
@@ -20,12 +21,13 @@ const page = async ({ params }: any) => {
           <p className="text-white/70 text-center">
             The link you are trying to access has either expired, been deleted, or never existed.
           </p>
-          <a
+          
+          <Link
             href="/"
             className="mt-4 px-6 py-2 rounded-lg bg-gradient-to-r from-[#00D1FF] to-[#7C3AED] text-white font-semibold shadow hover:scale-105 transition"
           >
             Go Home
-          </a>
+          </Link>
         </div>
       </main>
     );
