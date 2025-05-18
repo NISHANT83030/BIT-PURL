@@ -1,0 +1,11 @@
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- Left broken link -->
+  <path d="M7 14.5L9 12.5M9 12.5C9.82843 11.6716 11.1716 11.6716 12 12.5M9 12.5L7 10.5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Right broken link -->
+  <path d="M17 9.5L15 11.5M15 11.5C14.1716 12.3284 12.8284 12.3284 12 11.5M15 11.5L17 13.5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Cut mark -->
+  <path d="M12 11L12 13" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BIT PURL
 
-## Getting Started
+BIT PURL is a modern, full-stack URL shortener service built with Next.js, Clerk authentication, MongoDB, and a beautiful analytics dashboard.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+
+- **Shorten URLs:** Instantly create short links for any URL.
+- **User Authentication:** Secure sign-in and sign-up with Clerk.
+- **Personal Dashboard:** View all your shortened links in a modern, responsive table.
+- **Analytics:**  
+  - Click the **Analytics** button for any link to see:
+    - Clicks per day (interactive chart)
+    - Total clicks
+    - Date created
+    - Delete link option
+- **Loading Indicators:** Smooth SVG loader animations.
+- **Responsive UI:** Works great on desktop and mobile.
+- **Secure:** Only you can see and manage your links.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js (App Router), React, Tailwind CSS
+- **Backend:** Next.js API routes, Mongoose, MongoDB Atlas
+- **Auth:** Clerk
+- **Charts:** [Recharts](https://recharts.org/)
+- **Deployment:** Vercel
+
+---
+
+## 📦 Getting Started
+
+### 1. **Clone the repository**
+
+```sh
+git clone https://github.com/yourusername/bitpurl.git
+cd bitpurl
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. **Install dependencies**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. **Set up environment variables**
 
-## Learn More
+Create a `.env.local` file in the root:
 
-To learn more about Next.js, take a look at the following resources:
+```env
+MONGODB_URI=your_mongodb_atlas_connection_string
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. **Run locally**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```sh
+npm run dev
+```
 
-## Deploy on Vercel
+Visit [http://localhost:3000](http://localhost:3000)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🏗️ Project Structure
+
+```
+app/
+  (root)/(home)/links/         # User dashboard and analytics pages
+  api/user-links/              # API routes for user links and analytics
+  [shorturl]/                  # Dynamic redirect handler
+lib/
+  db.ts                        # MongoDB connection
+  url.ts                       # Mongoose URL schema
+public/
+  favicon.png                  # Favicon (link icon)
+  loading-circle.svg           # Loader SVG
+middleware.ts                  # Clerk route protection
+.env.local                     # Your environment variables
+```
+
+---
+
+## 🌐 Deployment
+
+1. **Push your code to GitHub.**
+2. **Connect your repo to [Vercel](https://vercel.com/).**
+3. **Set environment variables in Vercel dashboard.**
+4. **Deploy!**
+
+---
+
+## 🖼️ Screenshots
+
+> ![Dashboard Screenshot](./public/dashboard-screenshot.png)
+> ![Analytics Screenshot](./public/analytics-screenshot.png)
+
+---
+
+## 🙋 FAQ
+
+**Q: Why do I get a build error about `.next` or `ENOENT`?**  
+A: Make sure you are not running your project inside a cloud-synced folder (like OneDrive). Move it to a local directory.
+
+**Q: How do I change the favicon?**  
+A: Replace `public/favicon.png` or `public/favicon.svg` with your own icon.
+
+**Q: How do I add more analytics?**  
+A: Extend the `clicksByDate` logic in the backend and update the analytics page.
+
+---
+
+## 📄 License
+
+MIT
+
+---
+
+**Made with ❤️ for modern link sharing.**

@@ -1,0 +1,21 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradLink" x1="6" y1="6" x2="18" y2="18" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D1FF"/>
+      <stop offset="1" stop-color="#8A2BE2"/>
+    </linearGradient>
+    <linearGradient id="gradCut" x1="12" y1="11" x2="12" y2="13" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF4D4D"/>
+      <stop offset="1" stop-color="#FFA500"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left broken link -->
+  <path d="M7 14.5L9 12.5M9 12.5C9.82843 11.6716 11.1716 11.6716 12 12.5M9 12.5L7 10.5" stroke="url(#gradLink)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Right broken link -->
+  <path d="M17 9.5L15 11.5M15 11.5C14.1716 12.3284 12.8284 12.3284 12 11.5M15 11.5L17 13.5" stroke="url(#gradLink)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Cut mark -->
+  <path d="M12 11L12 13" stroke="url(#gradCut)" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
