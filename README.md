@@ -96,15 +96,16 @@ middleware.ts                  # Clerk route protection
 
 ## 🖼️ Screenshots
 
-> ![Dashboard Screenshot](./public/dashboard-screenshot.png)
-> ![Analytics Screenshot](./public/analytics-screenshot.png)
+> **Dashboard Screenshot**
+> ![image](https://github.com/user-attachments/assets/0aa5511c-2f34-43f5-ad0c-c690a7170faf)
+
+> **Analytics Screenshot**
+> 
+>![image](https://github.com/user-attachments/assets/06d81f1e-f562-4b03-a7ee-eac3f1c6f351)
 
 ---
 
 ## 🙋 FAQ
-
-**Q: Why do I get a build error about `.next` or `ENOENT`?**  
-A: Make sure you are not running your project inside a cloud-synced folder (like OneDrive). Move it to a local directory.
 
 **Q: How do I change the favicon?**  
 A: Replace `public/favicon.png` or `public/favicon.svg` with your own icon.
