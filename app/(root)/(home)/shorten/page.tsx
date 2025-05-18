@@ -16,7 +16,7 @@ const ShortenPage = () => {
       return;
     }
     const urlString=nanoid(10);
-    var myHeaders = new Headers();
+    const  myHeaders = new Headers();
 myHeaders.append("Content-Type", "text/plain");
      
 const raw = JSON.stringify({
