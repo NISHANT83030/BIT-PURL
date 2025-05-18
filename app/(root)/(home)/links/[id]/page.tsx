@@ -43,7 +43,7 @@ const AnalyticsPage = () => {
   };
 
   // Prepare chart data for current month
-  let chartData: { date: string; clicks: number }[] = [];
+  const  chartData: { date: string; clicks: number }[] = [];
   if (data?.clicksByDate) {
     const now = new Date();
     const year = now.getFullYear();
