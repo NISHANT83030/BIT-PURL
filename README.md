@@ -62,7 +62,7 @@ CLERK_SECRET_KEY=your_clerk_secret_key
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000)
+Visit [https://bit-purl-t5u6.vercel.app/]
 
 ---
 
